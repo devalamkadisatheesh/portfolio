@@ -1,26 +1,51 @@
 [
   {
-    "title": "Project A",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "Grossories",
+    "imageSrc": "projects/grossories.png",
+    "description": "I developed this grocery website as part of my learning and portfolio building because I wanted to work on a real-world, full-stack project.",
+    "skills": ["React", "Express", "Node","MongoDB","css"],
+    "demo": "https://grossories-frontend.onrender.com/",
+    "source": "https://github.com/devalamkadisatheesh/Grossories"
   },
   {
-    "title": "Project B",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "WeatherCheck",
+    "imageSrc": "projects/weather.png",
+    "description": "This is a project made to get experience on TailwindCSS by building an app.",
+    "skills": ["React", "TailwindCSS"],
+    "demo": "https://weatherden.netlify.app/",
+    "source": "https://github.com/devalamkadisatheesh/weather"
   },
   {
-    "title": "Project C",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "title": "ReduxCart",
+    "imageSrc": "projects/cart.png",
+    "description": "It helps to get experience on React and React-Redux",
+    "skills": ["React", "Redux","css"],
+    "demo": "https://shopcort.netlify.app",
+    "source": "https://github.com/devalamkadisatheesh/reduxcart"
+  },
+   {
+    "title": "React_POC",
+    "imageSrc": "projects/reactpoc.png",
+    "description": "It helps to get experience on React and contextAPI,javascript libriries. ",
+    "skills": ["React", "contextAPI","Javascript","css"],
+    "demo": "https://reactpocs.netlify.app",
+    "source": "https://github.com/devalamkadisatheesh/react_pocs"
+  },
+  {
+    "title": "MakeStylish",
+    "imageSrc": "projects/shopcart.png",
+    "description": "It helps to get experience on eccomerce filtrations and API Integration ",
+    "skills": ["Javascript", "HTML","API","REST API","css"],
+    "demo": "https://makestylish.netlify.app",
+    "source": "https://github.com/devalamkadisatheesh/makestylish"
+  }
+  ,
+   {
+    "title": "TaskManager",
+    "imageSrc": "projects/taskmanager.png",
+    "description": "It helps to get experience on thinking ability",
+    "skills": ["React", "TailwindCSS"],
+    "demo": "https://taskden.netlify.app",
+    "source": "https://github.com/devalamkadisatheesh/"
   }
 ]

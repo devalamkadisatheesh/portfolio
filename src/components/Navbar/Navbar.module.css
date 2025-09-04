@@ -17,7 +17,6 @@
   color: var(--color-text);
 }
 
-
 .menuBtn {
   display: none;
 }
@@ -36,6 +35,39 @@
   font-size: 25px;
   color: var(--color-text);
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover animation */
+.menuItems a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Active link styling */
+.menuItems a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  animation: fadeSlideRight 0.4s ease forwards;
+}
+
+/* Fade & slide animation */
+@keyframes fadeSlideRight {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 830px) {
@@ -52,6 +84,7 @@
     align-items: flex-end;
     gap: 11px;
     z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .menuBtn {
@@ -77,6 +110,20 @@
 
   .menuOpen {
     display: flex;
-    z-index: 1;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeSlideDown 0.4s forwards;
+  }
+
+  /* Mobile fade-down animation */
+  @keyframes fadeSlideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

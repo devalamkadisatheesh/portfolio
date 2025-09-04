@@ -1,10 +1,25 @@
 @import "../../vars.css";
 
+/* ✨ Fade in when section loads/scrolls */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ✨ Floating animation (always running) */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
 .container {
   color: var(--color-text);
   margin-top: 79px;
   margin-left: 10%;
   margin-right: 10%;
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
 }
 
 .title {
@@ -13,6 +28,15 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.title:hover {
+  color: var(--color-primary);
 }
 
 .content {
@@ -23,7 +47,7 @@
 }
 
 .skills {
-  width: 45%;
+  width: 47%;
   display: flex;
   flex-wrap: wrap;
   gap: 37px;
@@ -34,6 +58,15 @@
   flex-direction: column;
   align-items: center;
   gap: 11px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ Desktop hover + Mobile tap */
+.skill:hover,
+.skill:active {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .skillImageContainer {
@@ -44,16 +77,36 @@
   justify-content: center;
   width: 120px;
   height: 120px;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  animation: float 4s ease-in-out infinite; /* Always floating */
+}
+
+.skillImageContainer:hover,
+.skill:active .skillImageContainer {
+  transform: rotate(10deg) scale(1.1);
+  background-color: var(--color-primary);
 }
 
 .skillImageContainer img {
   width: 75px;
+  transition: transform 0.3s ease;
+}
+
+.skillImageContainer img:hover,
+.skill:active img {
+  transform: rotate(-10deg) scale(1.15);
 }
 
 .skill p {
   font-size: 25px;
   font-family: var(--font-roboto);
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.skill:hover p,
+.skill:active p {
+  color: var(--color-primary);
 }
 
 .history {
@@ -68,14 +121,33 @@
   flex-direction: row;
   align-items: center;
   gap: 17px;
-  background: #19376d;
   background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
   border-radius: 10px;
   padding: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* ✨ Desktop hover + Mobile tap */
+.historyItem:hover,
+.historyItem:active {
+  transform: translateX(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgba(25, 55, 109, 0.7) 100%
+  );
 }
 
 .historyItem img {
   width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.historyItem:hover img,
+.historyItem:active img {
+  transform: rotate(15deg) scale(1.1);
 }
 
 .historyItemDetails {
@@ -83,19 +155,25 @@
 }
 
 .historyItemDetails h3 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.historyItem:hover h3,
+.historyItem:active h3 {
+  color: var(--color-primary);
 }
 
 .historyItemDetails p {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
 }
 
 .historyItemDetails ul {
   margin-top: 6px;
   list-style-position: inside;
-  font-size: 25px;
+  font-size: 20px;
   list-style-type: disc;
   margin-left: 17px;
 }

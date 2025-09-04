@@ -10,18 +10,32 @@
   width: 100vw;
   padding: 58px 10%;
   gap: 10px;
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-in-out forwards;
 }
 
 .text h2 {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: 700;
   letter-spacing: 4px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-in-out forwards;
+  animation-delay: 0.3s;
+  transition: color 0.3s ease;
+}
+
+.text h2:hover {
+  color: var(--color-primary);
 }
 
 .text p {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-in-out forwards;
+  animation-delay: 0.5s;
+  transition: color 0.3s ease;
 }
 
 .links {
@@ -36,14 +50,48 @@
   display: flex;
   align-items: center;
   gap: 25px;
+  opacity: 0;
+  animation: fadeSlideRight 0.8s ease-in-out forwards;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Stagger animation for links */
+.link:nth-child(1) { animation-delay: 0.6s; }
+.link:nth-child(2) { animation-delay: 0.8s; }
+.link:nth-child(3) { animation-delay: 1s; }
+.link:nth-child(4) { animation-delay: 1.2s; }
+
+/* Desktop hover + Mobile tap effects */
+.link:hover,
+.link:active {
+  transform: translateX(8px) scale(1.05);
 }
 
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   letter-spacing: 1.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link a:hover,
+.link:active a {
+  color: var(--color-accent, #00bfff);
+  transform: translateX(8px) scale(1.05);
+}
+
+/* ✨ Animations */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideRight {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 @media screen and (max-width: 830px) {

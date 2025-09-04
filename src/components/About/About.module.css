@@ -9,6 +9,8 @@
   z-index: 1;
   margin-left: 10%;
   margin-right: 10%;
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-in-out forwards;
 }
 
 .title {
@@ -17,6 +19,10 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-in-out forwards;
+  animation-delay: 0.3s;
 }
 
 .content {
@@ -27,7 +33,14 @@
 
 .aboutImage {
   width: 35%;
+  border-radius: 40%;
+  height: 300px;
+  margin-right: 10px;
+  opacity: 0;
+  animation: zoomIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
+
 
 .aboutItems {
   color: var(--color-text);
@@ -50,22 +63,50 @@
   );
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: 0.4s;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeSlideUp 0.8s ease-in-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.aboutItem:hover {
+/* Staggered animation for items */
+.aboutItem:nth-child(1) { animation-delay: 0.7s; }
+.aboutItem:nth-child(2) { animation-delay: 0.9s; }
+.aboutItem:nth-child(3) { animation-delay: 1.1s; }
+
+/* Hover effect (desktop) and tap effect (mobile) */
+.aboutItem:hover,
+.aboutItem:active {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animate background on hover/tap */
+.aboutItem:hover,
+.aboutItem:active {
   background-size: 100% 100%;
 }
 
+/* Headings & paragraph inside items */
 .aboutItem h3 {
   font-size: 25px;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .aboutItem p {
   font-size: 25px;
+  transition: color 0.3s ease;
 }
 
+/* Hover/tap text color change */
+.aboutItem:hover h3,
+.aboutItem:active h3,
+.aboutItem:hover p,
+.aboutItem:active p {
+  color: var(--color-primary);
+}
+/* Media query for responsive */
 @media screen and (max-width: 830px) {
   .container {
     background-color: transparent;
@@ -75,6 +116,7 @@
 
   .content {
     flex-direction: column;
+    align-items: center;
   }
 
   .aboutImage {
@@ -89,4 +131,15 @@
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+/* ✨ Animations */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
 }

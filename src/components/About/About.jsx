@@ -9,7 +9,7 @@ export const About = () => {
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
         <img
-          src={getImageUrl("about/aboutImage.png")}
+          src={getImageUrl("about/laptop_with_suit.png")}
           alt="Me sitting with a laptop"
           className={styles.aboutImage}
         />
@@ -18,32 +18,12 @@ export const About = () => {
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
-              <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+              <p style={{fontSize:"20px"}}>
+                I have 1 year of experience at Tech Mahindra, skilled in HTML, CSS, JavaScript, React, Next.js, and Node.js. I'm passionate about building responsive and interactive web applications, and I'm eager to expand my skills to become a full-stack developer. I'm a team player with strong problem-solving skills, and I'm excited to contribute to innovative projects in a new role.
               </p>
             </div>
           </li>
-          <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
-            <div className={styles.aboutItemText}>
-              <h3>Backend Developer</h3>
-              <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
-              </p>
-            </div>
-          </li>
-          <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
-            <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
-              <p>
-                I have designed multiple landing pages and have created design
-                systems as well
-              </p>
-            </div>
-          </li>
+          
         </ul>
       </div>
     </section>

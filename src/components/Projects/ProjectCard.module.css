@@ -1,5 +1,15 @@
 @import "../../vars.css";
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
+/* ✨ Floating animation (always running) */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -8,10 +18,34 @@
   box-shadow: 0 16px 14px 0 #04152d;
   padding: 18px 24px;
   max-width: 345px;
+  height: 600px;
+  animation: fadeSlideUp 1s ease forwards;
+  transition: transform 1s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.container img{
+    transition: transform 0.3s ease;
+    border-radius: 10%;
+}
+.container:hover,
+.container:active {
+  transform: translateX(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgba(25, 55, 109, 0.7) 100%
+  );
+  animation: fadeSlideUp 1s ease forwards;
+  
 }
 
+.container:hover img,
+.container:active img {
+  transform: rotate(15deg) scale(1.1);
+}
 .image {
   margin-bottom: 26px;
+  height: 250px;
 }
 
 .title {
@@ -21,7 +55,7 @@
 
 .description {
   margin-top: 6px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -36,7 +70,7 @@
 }
 
 .skill {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   border-radius: 100px;
   background: var(--color-dark);
