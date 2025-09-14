@@ -5,11 +5,6 @@
 }
 
 /* ✨ Floating animation (always running) */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
 .container {
   display: flex;
   flex-direction: column;
@@ -28,15 +23,12 @@
 }
 .container:hover,
 .container:active {
-  transform: translateX(10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   background: linear-gradient(
     90deg,
     var(--color-primary) 0%,
     rgba(25, 55, 109, 0.7) 100%
   );
-  animation: fadeSlideUp 1s ease forwards;
-  
 }
 
 .container:hover img,

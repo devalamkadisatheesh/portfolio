@@ -99,14 +99,23 @@
     flex-direction: column;
     gap: 23px;
   }
-
+   .linkname{
+     display: none;
+  }
+.contact{
+  color: rebeccapurple;
+}
   .text {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .links {
     align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
   }
 }

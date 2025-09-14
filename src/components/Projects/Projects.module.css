@@ -96,6 +96,6 @@
 /* Mobile responsiveness */
 @media screen and (max-width: 830px) {
   .container { margin-left: 0; margin-right: 0; }
-  .projects { flex-direction: column; gap: 20px; }
+  .projects { flex-direction: column; gap: 20px;align-items: center; }
   .projectItem { width: 90%; }
 }
