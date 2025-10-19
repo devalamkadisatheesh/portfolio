@@ -38,7 +38,7 @@ export const Navbar = () => {
           <li>
             <a href="#contact">Contact</a>
           </li>
-          <a href="https://drive.google.com/file/d/1dqGsc-T_l_9qnszp1hXKbvc_e-rEqQ3e/view?pli=1" target="_blank" rel="noopener noreferrer">
+          <a href="https://drive.google.com/file/d/1SW97yRIGZIB255szh3MTAqItbDD1iYsy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
   View Resume  </a>
           
         </ul>
